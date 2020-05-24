@@ -59,8 +59,12 @@ namespace Calculator
                         var1 = textBoxData.Text;
                         break;
                     case (":"):
-                        textBoxData.Text = (Convert.ToDouble(var1) / Convert.ToDouble(var2)).ToString();
-                        var1 = textBoxData.Text;
+                        if (Convert.ToInt32(var2) == 0) textBoxData.Text = "Divide by 0!";
+                        else
+                        {
+                            textBoxData.Text = (Convert.ToDouble(var1) / Convert.ToDouble(var2)).ToString();
+                            var1 = textBoxData.Text;
+                        }
                         break;
 
                 }//end switch
