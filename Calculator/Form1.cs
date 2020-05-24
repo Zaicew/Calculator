@@ -35,11 +35,10 @@ namespace Calculator
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
-            // if (var2 == "" || !operationPressed && !buttonEqualPressed) var2 = textBoxData.Text;
+            if (textBoxData.Text == "Divide by 0!") SystemSounds.Hand.Play();
+            else if(!operationPressed) labelMeanchwileWalue.Text = $"{var1} {operation} {var2} = ";
 
-            if (!buttonEqualPressed) var2 = textBoxData.Text;
-
-            if (!operationPressed) labelMeanchwileWalue.Text = $"{var1} {operation} {var2} = ";
+            if (!buttonEqualPressed) var2 = textBoxData.Text;            
             if (var1 == "" || var2 == "") SystemSounds.Hand.Play();
 
             else
@@ -59,7 +58,12 @@ namespace Calculator
                         var1 = textBoxData.Text;
                         break;
                     case (":"):
-                        if (Convert.ToInt32(var2) == 0) textBoxData.Text = "Divide by 0!";
+                        if (Convert.ToInt32(var2) == 0)
+                        {
+                            buttonCE_Click(sender, e);
+                            SystemSounds.Hand.Play();
+                            textBoxData.Text = "Divide by 0!";
+                        }
                         else
                         {
                             textBoxData.Text = (Convert.ToDouble(var1) / Convert.ToDouble(var2)).ToString();
