@@ -227,7 +227,7 @@ namespace Calculator
                 buttonClick == false && (
                 labelMeanchwileWalue.Text[labelMeanchwileWalue.Text.Count() - 1] == '+' ||
                 labelMeanchwileWalue.Text[labelMeanchwileWalue.Text.Count() - 1] == '-' ||
-                labelMeanchwileWalue.Text[labelMeanchwileWalue.Text.Count() - 1] == '/' ||
+                labelMeanchwileWalue.Text[labelMeanchwileWalue.Text.Count() - 1] == ':' ||
                 labelMeanchwileWalue.Text[labelMeanchwileWalue.Text.Count() - 1] == '*'))
             {
                 labelMeanchwileWalue.Text = labelMeanchwileWalue.Text.Remove(labelMeanchwileWalue.Text.Count() - 1);
